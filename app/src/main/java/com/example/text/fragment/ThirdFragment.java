@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ import androidx.fragment.app.FragmentActivity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.text.Login;
 import com.example.text.R;
 import com.example.text.utils.BitmapUtils;
 import com.example.text.utils.CameraUtils;
@@ -41,7 +43,7 @@ import java.util.Date;
 
 public class ThirdFragment extends Fragment {
 
-
+    private Button btn_exit;
     private ImageView imageView;
     Uri imageUri;
 
@@ -88,10 +90,25 @@ public class ThirdFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ivHead = getActivity().findViewById(R.id.iv_head);
+        btn_exit = getActivity().findViewById(R.id.exit);
+        btn_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), Login.class);
+                startActivity(intent);
+            }
+        });
+
 
         //检查版本
         checkVersion();
         ivHead.setOnClickListener(new View.OnClickListener() {
+            /**
+             * 更换头像
+             *
+             * @param view
+             */
+
             @Override
             public void onClick(View view) {
                 bottomSheetDialog = new BottomSheetDialog(getActivity());
@@ -170,41 +187,6 @@ public class ThirdFragment extends Fragment {
             showMsg("无需请求动态权限");
         }
     }
-
-    /**
-     * 更换头像
-     *
-     * @param view
-     */
-//    public void changeAvatar(View view) {
-//        bottomSheetDialog = new BottomSheetDialog(getActivity());
-//        bottomView = getLayoutInflater().inflate(R.layout.dialog_bottom, null);
-//        bottomSheetDialog.setContentView(bottomView);
-//        bottomSheetDialog.getWindow().findViewById(com.google.android.material.R.id.design_bottom_sheet).setBackgroundColor(Color.TRANSPARENT);
-//        TextView tvTakePictures = bottomView.findViewById(R.id.tv_take_pictures);
-//        TextView tvOpenAlbum = bottomView.findViewById(R.id.tv_open_album);
-//        TextView tvCancel = bottomView.findViewById(R.id.tv_cancel);
-//
-//        //拍照
-//        tvTakePictures.setOnClickListener(v -> {
-//            takePhoto();
-//            showMsg("拍照");
-//            bottomSheetDialog.cancel();
-//        });
-//        //打开相册
-//        tvOpenAlbum.setOnClickListener(v -> {
-//            openAlubm();
-//            showMsg("打开相册");
-//            bottomSheetDialog.cancel();
-//        });
-//        //取消
-//        tvCancel.setOnClickListener(v -> {
-//            bottomSheetDialog.cancel();
-//        });
-//        //底部弹窗显示
-//        bottomSheetDialog.show();
-//
-//    }
 
 
     /**
