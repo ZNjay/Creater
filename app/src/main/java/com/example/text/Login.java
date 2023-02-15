@@ -33,11 +33,13 @@ public class Login extends AppCompatActivity {
 //    EditText username, Password;
 
     //记住功能复选框
-    private CheckBox rememberPass, auto_login;
+    private CheckBox rememberPass;
     //新建数据库
     private DatabaseHelper mSQLite;
 
-
+//    SharedPreferences 对象本身只能获取数据而不支持存储和修改,存储修改是通过
+//    SharedPreferences.edit() 获取的内部接口 Editor 对象实现。使用 Preference 来存取数据，用到了
+//    SharedPreferences 接口和 SharedPreferences 的一个内部接口 SharedPreferences.Editor ，这两个接口在 android.content 包中；
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
 
