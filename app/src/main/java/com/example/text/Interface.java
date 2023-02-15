@@ -115,12 +115,12 @@ public class Interface extends FragmentActivity implements View.OnClickListener 
     private View thirdLayout = null;// 我显示布局
 
     /*声明组件变量*/
-    private ImageView weixinImg = null;
+    private ImageView fristImg = null;
     private ImageView contactImg = null;
     private ImageView findImg = null;
 
 
-    private TextView weixinText = null;
+    private TextView fristText = null;
     private TextView contactText = null;
     private TextView findText = null;
 
@@ -160,12 +160,12 @@ public class Interface extends FragmentActivity implements View.OnClickListener 
         thirdLayout = findViewById(R.id.self_layout);
 
 
-        weixinImg = (ImageView) findViewById(R.id.frist_img);
+        fristImg = (ImageView) findViewById(R.id.frist_img);
         contactImg = (ImageView) findViewById(R.id.contact_img);
         findImg = (ImageView) findViewById(R.id.self_img);
 
 
-        weixinText = (TextView) findViewById(R.id.weixin_text);
+        fristText = (TextView) findViewById(R.id.frist_text);
         contactText = (TextView) findViewById(R.id.contact_text);
         findText = (TextView) findViewById(R.id.self_text);
 
@@ -208,8 +208,8 @@ public class Interface extends FragmentActivity implements View.OnClickListener 
         switch (index) {
             case 0:
                 // 当点击了我的tab时改变控件的图片和文字颜色
-                weixinImg.setImageResource(R.drawable.baseline_panorama_fish_eye_24);//修改布局中的图片
-                weixinText.setTextColor(Color.parseColor("#0090ff"));//修改字体颜色
+                findImg.setImageResource(R.drawable.baseline_panorama_fish_eye_24);//修改布局中的图片
+                findText.setTextColor(Color.parseColor("#0090ff"));//修改字体颜色
 
                 if (firstFragment == null) {
 
@@ -253,8 +253,8 @@ public class Interface extends FragmentActivity implements View.OnClickListener 
      * 清除掉所有的选中状态
      */
     private void clearSelection() {
-        weixinImg.setImageResource(R.drawable.baseline_panorama_fish_24);
-        weixinText.setTextColor(Color.parseColor("#82858b"));
+        findImg.setImageResource(R.drawable.baseline_panorama_fish_24);
+        fristText.setTextColor(Color.parseColor("#82858b"));
 
         contactImg.setImageResource(R.drawable.tab_address_normal);
         contactText.setTextColor(Color.parseColor("#82858b"));
