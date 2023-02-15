@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="通信录"
+            android:text="@string/phone"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -32,7 +32,7 @@
         android:drawSelectorOnTop="true"
         android:background="@color/white"
         android:divider="@drawable/main_list_divider_line"
-        android:dividerHeight="1.5px" />
+        android:dividerHeight="1.5dp" />
 
 <!--    <com.example.wxchatdemo.SideBar-->
 <!--        android:id="@+id/side_bar"-->
