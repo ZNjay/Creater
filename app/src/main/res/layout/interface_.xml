@@ -36,7 +36,7 @@
                 android:src="@drawable/baseline_panorama_fish_eye_24" />
 
             <TextView
-                android:id="@+id/weixin_text"
+                android:id="@+id/frist_text"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_gravity="center_horizontal"
